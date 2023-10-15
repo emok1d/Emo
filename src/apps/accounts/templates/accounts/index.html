@@ -1,0 +1,21 @@
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <h1>
+        {{user.username}}
+    </h1>
+
+    <a href={% url 'logout' %}>logout</a>
+
+    {% with profile=user.profile %}
+        {% if profile %}
+        <h1>34klfdg</h1>
+        <h2>
+            {{profile.persona|default:"5"}}
+        </h2>
+        <div>
+            {{profile.balance|default:"7"}}
+        </div>
+        {%endif%}
+    {% endwith %}
+{% endblock %}
