@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "apps.accounts",
     "crispy_forms",
+    "apps.events",
+    "taggit",
 ]
 
 MIDDLEWARE = [
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Samara"
 
 USE_I18N = True
 
@@ -130,5 +132,7 @@ LOGIN_URL = "signin"
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '77460962649-u6f02o6278n1ljbalohs3mgas22st4uo.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = (
+    "77460962649-u6f02o6278n1ljbalohs3mgas22st4uo.apps.googleusercontent.com"
+)
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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"

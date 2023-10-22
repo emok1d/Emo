@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LogoutView as logout_view
 from apps.accounts.views import SignUpView, SignInView, MainView, ProfileView
+from apps.events.views import EventView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -30,4 +31,5 @@ urlpatterns = [
     path("", MainView.as_view(), name="index"),
     path("logout", logout_view.as_view(), name="logout"),
     path("profile", ProfileView.as_view(), name="profile"),
+    path("events/<slug:slug>", EventView.as_view(), name="events"),
 ]

@@ -34,7 +34,9 @@ class SignUpView(View):
                 user = form.save()
             except IntegrityError as e:
                 e = "This username already taken!"
-                return render(request, "accounts/signup.html", context={ 'form': form, 'e': e})
+                return render(
+                    request, "accounts/signup.html", context={"form": form, "e": e}
+                )
             if user is not None:
                 login(request, user)
                 UserProfile.objects.create(user=user, balance=0, bonus=0, age=0)

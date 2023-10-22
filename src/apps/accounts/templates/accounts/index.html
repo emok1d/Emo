@@ -5,16 +5,19 @@
         {{user.username}}
     </h1>
 
+    <a href={% url 'signin' %}>login</a>
+    <a href={% url 'signup' %}>reg</a>
     <a href={% url 'logout' %}>logout</a>
 
     {% with profile=user.profile %}
         {% if profile %}
         <h1>34klfdg</h1>
+            Возраст: {{profile.age}}
         <h2>
-            {{profile.persona|default:"5"}}
+            Бонус: {{profile.bonus}}%
         </h2>
         <div>
-            {{profile.balance|default:"7"}}
+            Баланс: {{profile.balance}} р.
         </div>
         {%endif%}
     {% endwith %}
